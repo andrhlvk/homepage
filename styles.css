@@ -8,9 +8,6 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.5;
 
-  --primary-text-color: #181820;
-  --secondary-text-color: #5c5c62;
-  --durability-text-color: #6a737d9c;
   --icon-color: #6a737d;
   --accent-color: #0066ff;
 
@@ -18,17 +15,26 @@ body {
   color: #232526;
 }
 
+.page {
+  overflow: hidden;
+}
+
+body.dark {
+  color: #f5f5f5;
+  background: #232526;
+}
+
 a {
   color: #232526;
+  transition: color 0.3s linear;
 }
 
 body.dark a {
   color: #f5f5f5;
 }
 
-body.dark {
-  color: #f5f5f5;
-  background: #232526;
+body.dark .resume {
+  background: rgb(22, 22, 22);
 }
 
 .container {
@@ -71,6 +77,7 @@ header {
   box-shadow: 1px 1px 7px 7px #adadad;
   padding: 30px 0 30px;
   max-width: 900px;
+  transition: all 0.3s linear;
 }
 
 .resume__block {
@@ -147,6 +154,19 @@ header {
 .appearence-actions {
   display: flex;
   align-items: center;
+  position: relative;
+}
+
+.appearence-actions::after {
+  content: '← tweak my resume :)';
+  display: block;
+  position: absolute;
+  right: -180px;
+  top: 35px;
+  transform: rotate(20deg);
+  color: var(--accent-color);
+  font-family: cursive;
+  font-size: 15px;
 }
 
 .contact-info__header,
@@ -215,6 +235,23 @@ header {
   object-fit: cover;
   border: 3px solid;
   border-color: var(--accent-color);
+}
+
+.mail-title {
+  position: relative;
+}
+
+.mail-title.popup {
+  opacity: 0;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+
+  transition: opacity 0.2s linear;
+}
+
+.mail-title:hover .popup {
+  opacity: 1;
 }
 
 .intro {
@@ -306,6 +343,23 @@ header {
   left: -15px;
 }
 
+.hobbies__header {
+  text-align: center;
+  margin-bottom: -5px;
+}
+
+.hobbies__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.hobbies__item {
+  margin-top: 20px;
+  text-align: center;
+  flex: 50%;
+}
+
 @media screen and (max-width: 576px) {
   .contact_info_container {
     flex-direction: column;
@@ -329,5 +383,11 @@ header {
 
   .languages__item:not(:last-child) {
     margin-bottom: 10px;
+  }
+
+  .mail-title.popup {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
   }
 }
