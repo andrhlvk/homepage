@@ -1,4 +1,6 @@
-* {
+*,
+*::after,
+*::before {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -9,7 +11,7 @@ body {
   line-height: 1.5;
 
   --icon-color: #6a737d;
-  --accent-color: #0066ff;
+  --accent-color: #06f;
 
   transition: all 0.3s linear;
   color: #232526;
@@ -33,10 +35,6 @@ body.dark a {
   color: #f5f5f5;
 }
 
-body.dark .resume {
-  background: rgb(22, 22, 22);
-}
-
 .container {
   margin: 0 auto;
   padding: 0 30px;
@@ -44,7 +42,7 @@ body.dark .resume {
 }
 
 header {
-  padding: 10px 10px 0 10px;
+  padding: 10px 10px 0;
 }
 
 .container.container--header {
@@ -75,9 +73,13 @@ header {
   margin: 20px auto;
   border: 1px solid #f5f5f5;
   box-shadow: 1px 1px 7px 7px #adadad;
-  padding: 30px 0 30px;
+  padding: 30px 0;
   max-width: 900px;
   transition: all 0.3s linear;
+}
+
+body.dark .resume {
+  background: rgb(22 22 22);
 }
 
 .resume__block {
@@ -94,16 +96,12 @@ header {
   width: 0;
 }
 
-.theme-input:checked + .theme-label .theme-label__ball {
-  transform: translateX(24px);
-}
-
 .theme-label {
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(41, 41, 41);
+  background-color: rgb(41 41 41);
   width: 50px;
   height: 26px;
   border-radius: 50px;
@@ -133,13 +131,17 @@ header {
   transition: transform 0.2s linear;
 }
 
+.theme-input:checked + .theme-label .theme-label__ball {
+  transform: translateX(24px);
+}
+
 .accent-label {
   cursor: pointer;
   display: grid;
   place-items: center;
   background-color: #f5f5f5;
   border-radius: 50%;
-  border: 1px solid rgb(41, 41, 41);
+  border: 1px solid rgb(41 41 41);
   width: 26px;
   height: 26px;
 }
@@ -158,7 +160,7 @@ header {
 }
 
 .appearence-actions::after {
-  content: '← tweak my resume :)';
+  content: "← tweak my resume :)";
   display: block;
   position: absolute;
   right: -180px;
@@ -198,10 +200,6 @@ header {
   flex-grow: 2;
 }
 
-.contact-info__block:last-child .contact-info__item {
-  justify-content: flex-end;
-}
-
 .contact-info__item {
   text-decoration: none;
   display: flex;
@@ -210,6 +208,10 @@ header {
 
 .contact-info__item:not(:last-child) {
   margin-bottom: 20px;
+}
+
+.contact-info__block:last-child .contact-info__item {
+  justify-content: flex-end;
 }
 
 .contact-info__item-icon-wrapper {
@@ -246,7 +248,6 @@ header {
   position: absolute;
   bottom: -20px;
   right: 0;
-
   transition: opacity 0.2s linear;
 }
 
@@ -339,7 +340,7 @@ header {
 
 .languages__item::before {
   position: absolute;
-  content: '✓';
+  content: "✓";
   left: -15px;
 }
 
@@ -362,11 +363,8 @@ header {
 
 @media screen and (max-width: 576px) {
   .contact_info_container {
-    flex-direction: column;
-  }
-
-  .contact_info_container {
     align-items: center;
+    flex-direction: column;
   }
 
   .contact-info__block:not(:last-child) {
