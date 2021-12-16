@@ -10,18 +10,18 @@
     <header>
       <div class="container container--header">
         <h1 class="header__title">My Resume</h1>
-        <form class="appearence-form">
+        <div class="appearence-actions">
           <input class="theme-input" id="theme" type="checkbox" />
           <label class="theme-label" for="theme">
             <span class="theme-label__item">🌙</span>
-            <div class="theme-label__ball"></div>
+            <span class="theme-label__ball"></span>
             <span class="theme-label__item">🌞</span>
           </label>
           <input class="accent-input" id="accent-color" type="color" />
           <label class="accent-label" for="accent-colot">
             <div class="accent-label__ball"></div>
           </label>
-        </form>
+        </div>
       </div>
     </header>
     <main>
@@ -176,66 +176,59 @@
         </div>
         <div class="container">
           <div class="resume__block">
-            <div class="main-info fh">
-              <div class="experiences">
-                <h3 class="experiences__header">Experience</h3>
-                <div class="experiences__company">
-                  <div class="experiences__company-header">
-                    <h3 class="experiences__company-header-name">
-                      Pet projects
-                    </h3>
-                  </div>
-
-                  <div class="experiences__company-project">
-                    <span class="experiences__company-project-role"
-                      >Binary Studio Cat</span
-                    >
-                    <h3 class="experiences__company-project-name">
-                      Hooman project
-                    </h3>
-                    <ul class="experiences__company-project-responsibilities">
-                      <li>Supported hoomans</li>
-                      <li>Slept all the time</li>
-                      <li>Lied on the keyboard</li>
-                      <li>Watched my hoomans working</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div class="additional-info fv">
-                <div class="additional-info__education">
-                  <h3 class="additional-info__education-header">Education</h3>
-                  <div class="additional-info__education-university">
-                    <span
-                      class="additional-info__education-university-durability"
-                      >2018 - Present</span
-                    >
-                    <h3
-                      class="additional-info__education-university-speciality"
-                    >
-                      Telecommunication's software & hardware engineer
-                    </h3>
-                    <p class="additional-info__education-university-name">
-                      Kyiv Polytechnic Institute, Institute of Telecommunication
-                      Systems
-                    </p>
-                  </div>
-                </div>
-
-                <div class="additional-info__languages">
-                  <h3 class="additional-info__languages-header">Languages</h3>
-                  <p class="additional-info__languages-item">
-                    Ukrainian (native)
+            <div class="education">
+              <h3 class="education__header">Education</h3>
+              <ul class="education__list">
+                <li class="education__item">
+                  <h4 class="education__item-title">
+                    Kyiv Polytechnic Institute, Institute of Telecommunication
+                    Systems
+                  </h4>
+                  <p class="education__item-time">2018 - Present</p>
+                  <p class="education__item-info">4th year student</p>
+                  <p class="education__item-description">
+                    During my freshman year studied basics of information
+                    technologies, algorithms and data structures, C++ OOP and
+                    functional programming, basic SQL.Then proceeded to study
+                    engineering of telecommunication systems including the
+                    following web-related disciplines: network-design, network
+                    IP technologies and protocols.
                   </p>
-                  <p class="additional-info__languages-item">
-                    Russian (native)
+                </li>
+                <li class="education__item">
+                  <h4 class="education__item-title">React Course</h4>
+                  <p class="education__item-time">2021</p>
+                  <p class="education__item-info">Udemy Course</p>
+                  <p class="education__item-description">
+                    Hooks, React Router, Redux, Styled Components, some basic
+                    Unit Tests in React
                   </p>
-                  <p class="additional-info__languages-item">
-                    English (B2 - A1)
-                  </p>
-                </div>
-              </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="resume__block">
+            <div class="languages">
+              <h3 class="languages__header">Languages</h3>
+              <ul class="languages__list">
+                <li class="languages__item">English (B2 - A1)</li>
+                <li class="languages__item">Ukrainian (Native)</li>
+                <li class="languages__item">Russian (Native)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="container">
+          <div class="resume__block">
+            <div class="hobbies">
+              <h3 class="hobbies__header">Hobbies</h3>
+              <ul class="hobbies__list">
+                <li class="hobbies__item">English (B2 - A1)</li>
+                <li class="hobbies__item">Ukrainian (Native)</li>
+                <li class="hobbies__item">Russian (Native)</li>
+              </ul>
             </div>
           </div>
         </div>
