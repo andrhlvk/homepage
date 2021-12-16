@@ -1,0 +1,391 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
+
+  --icon-color: #6a737d;
+  --accent-color: #06f;
+
+  transition: all 0.3s linear;
+  color: #232526;
+}
+
+.page {
+  overflow: hidden;
+}
+
+body.dark {
+  color: #f5f5f5;
+  background: #232526;
+}
+
+a {
+  color: #232526;
+  transition: color 0.3s linear;
+}
+
+body.dark a {
+  color: #f5f5f5;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 900px;
+}
+
+header {
+  padding: 10px 10px 0;
+}
+
+.container.container--header {
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.header__title {
+  font-size: 24px;
+}
+
+.fh {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.fv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.resume {
+  margin: 20px auto;
+  border: 1px solid #f5f5f5;
+  box-shadow: 1px 1px 7px 7px #adadad;
+  padding: 30px 0;
+  max-width: 900px;
+  transition: all 0.3s linear;
+}
+
+body.dark .resume {
+  background: rgb(22 22 22);
+}
+
+.resume__block {
+  border-bottom: 3px solid var(--accent-color);
+  padding-bottom: 30px;
+  margin-bottom: 15px;
+}
+
+.theme-input,
+.accent-input {
+  position: absolute;
+  opacity: 0;
+  right: 0;
+  width: 0;
+}
+
+.theme-label {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(41 41 41);
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  padding: 5px;
+  border: 1px solid #f5f5f5;
+  position: relative;
+  user-select: none;
+}
+
+.theme-label:not(:last-child) {
+  margin-right: 10px;
+}
+
+.theme-label__item {
+  font-size: 13px;
+}
+
+.theme-label__ball {
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
+}
+
+.theme-input:checked + .theme-label .theme-label__ball {
+  transform: translateX(24px);
+}
+
+.accent-label {
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+  background-color: #f5f5f5;
+  border-radius: 50%;
+  border: 1px solid rgb(41 41 41);
+  width: 26px;
+  height: 26px;
+}
+
+.accent-label__ball {
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  height: 22px;
+  width: 22px;
+}
+
+.appearence-actions {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.appearence-actions::after {
+  content: "← tweak my resume :)";
+  display: block;
+  position: absolute;
+  right: -180px;
+  top: 35px;
+  transform: rotate(20deg);
+  color: var(--accent-color);
+  font-family: cursive;
+  font-size: 15px;
+}
+
+.contact-info__header,
+.contact-info__sub-header {
+  text-align: center;
+}
+
+.contact-info__header {
+  font-size: 26px;
+  margin-bottom: 15px;
+  text-decoration-color: var(--accent-color);
+  text-decoration-line: underline;
+}
+
+.contact-info__sub-header {
+  margin-bottom: 30px;
+}
+
+.contact-info__block {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+}
+
+.contact-info__block--center {
+  justify-content: center;
+  align-items: center;
+  flex-grow: 2;
+}
+
+.contact-info__item {
+  text-decoration: none;
+  display: flex;
+  justify-content: start;
+}
+
+.contact-info__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.contact-info__block:last-child .contact-info__item {
+  justify-content: flex-end;
+}
+
+.contact-info__item-icon-wrapper {
+  margin-right: 10px;
+  width: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.contact-info__item-icon path {
+  fill: var(--icon-color);
+}
+
+.contact-info__item-icon {
+  height: 1.1428rem;
+  vertical-align: text-bottom;
+}
+
+.contact-info__avatar {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border: 3px solid;
+  border-color: var(--accent-color);
+}
+
+.mail-title {
+  position: relative;
+}
+
+.mail-title.popup {
+  opacity: 0;
+  position: absolute;
+  bottom: -20px;
+  right: 0;
+  transition: opacity 0.2s linear;
+}
+
+.mail-title:hover .popup {
+  opacity: 1;
+}
+
+.intro {
+  display: flex;
+  justify-content: start;
+}
+
+.intro__icon-wrapper {
+  margin-right: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.intro__icon {
+  height: 1.1428rem;
+  vertical-align: text-bottom;
+}
+
+.intro__icon path {
+  fill: var(--accent-color);
+}
+
+.intro_text {
+  text-align: justify;
+  text-indent: 10px;
+}
+
+.skills__header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.skills__text {
+  text-align: center;
+}
+
+.education__header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.education__list {
+  list-style: none;
+  text-align: center;
+}
+
+.education__item {
+  position: relative;
+}
+
+.education__item:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.education__item-time {
+  text-decoration: underline;
+}
+
+.education__item-info {
+  font-style: italic;
+}
+
+.education__item-description {
+  margin-top: 10px;
+  text-align: left;
+  text-indent: 10px;
+}
+
+.languages__header {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.languages__list {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.languages__item {
+  position: relative;
+}
+
+.languages__item::before {
+  position: absolute;
+  content: "✓";
+  left: -15px;
+}
+
+.hobbies__header {
+  text-align: center;
+  margin-bottom: -5px;
+}
+
+.hobbies__list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+}
+
+.hobbies__item {
+  margin-top: 20px;
+  text-align: center;
+  flex: 50%;
+}
+
+@media screen and (max-width: 576px) {
+  .contact_info_container {
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .contact-info__block:not(:last-child) {
+    margin-bottom: 20px;
+  }
+
+  .contact-info__block:last-child .contact-info__item {
+    justify-content: start;
+  }
+
+  .languages__list {
+    flex-direction: column;
+  }
+
+  .languages__item:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .mail-title.popup {
+    left: 50%;
+    transform: translateX(-50%);
+    right: auto;
+  }
+}
